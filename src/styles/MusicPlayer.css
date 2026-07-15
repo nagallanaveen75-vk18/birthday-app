@@ -1,120 +1,230 @@
+/* ==========================================
+   MUSIC PLAYER
+========================================== */
+
 .music-player {
+
     position: fixed;
+
     bottom: 20px;
+
     right: 20px;
 
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(10px);
+    width: 260px;
 
-    padding: 15px;
-    border-radius: 18px;
+    background: rgba(18,18,18,.75);
 
-    display: none;
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    border-radius: 20px;
+
+    padding: 16px;
+
+    display: flex;
+
     flex-direction: column;
-    gap: 10px;
+
+    gap: 14px;
 
     z-index: 999;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.35),
+        0 0 25px rgba(255,20,147,.25);
+
+    transition: .35s;
 }
 
-.music-title {
-    color: white;
-    font-size: 18px;
-    text-align: center;
-    font-weight: bold;
+/* ==========================================
+   SONG NAME
+========================================== */
+
+.music-title{
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    text-overflow:ellipsis;
 }
 
-.music-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+/* ==========================================
+   BUTTON
+========================================== */
+
+.music-player button{
+
+    width:100%;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+        135deg,
+        #ff4d88,
+        #ff7aa8
+    );
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.25s;
 }
 
-.music-buttons button {
-    padding: 10px 18px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    background: #ff4d88;
-    color: white;
-    font-size: 18px;
-    transition: 0.3s;
+.music-player button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 0 18px rgba(255,20,147,.5);
 }
 
-.music-buttons button:hover {
-    transform: scale(1.05);
+.music-player button:active{
+
+    transform:scale(.97);
 }
 
-.volume-box {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: white;
+/* ==========================================
+   VOLUME
+========================================== */
+
+.volume-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:white;
+
+    font-size:15px;
 }
 
-.volume-box input {
-    width: 100%;
+.volume-box input{
+
+    flex:1;
+
+    accent-color:#ff4d88;
+
+    cursor:pointer;
 }
 
-/* ==========================
-   Mobile (max 768px)
-========================== */
+/* ==========================================
+   MOBILE
+========================================== */
 
 @media (max-width:768px){
 
-    .music-player{
+.music-player{
 
-        width:130px;
+    width:170px;
 
-        padding:6px;
+    bottom:12px;
 
-        bottom:8px;
+    right:12px;
 
-        right:8px;
+    padding:10px;
 
-        border-radius:10px;
-    }
+    gap:8px;
 
-    .music-title{
+    border-radius:16px;
 
-        font-size:10px;
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.4),
+        0 0 15px rgba(255,20,147,.25);
 
-        margin-bottom:5px;
-    }
+}
 
-    .music-buttons{
+.music-title{
 
-        display:flex;
+    font-size:12px;
 
-        justify-content:center;
+    line-height:1.3;
 
-        gap:4px;
-    }
+}
 
-    .music-buttons button{
+.music-player button{
 
-        width:28px;
+    height:34px;
 
-        height:28px;
+    font-size:12px;
 
-        padding:0;
+    border-radius:9px;
 
-        font-size:11px;
+}
 
-        border-radius:6px;
-    }
+.volume-box{
 
-    .volume-box{
+    font-size:11px;
 
-        font-size:10px;
+    gap:6px;
 
-        gap:4px;
-    }
+}
 
-    .volume-box input{
+.volume-box input{
 
-        width:55px;
+    height:4px;
 
-        height:4px;
-    }
+}
+
+}
+
+/* ==========================================
+   VERY SMALL PHONES
+========================================== */
+
+@media (max-width:480px){
+
+.music-player{
+
+    width:150px;
+
+    bottom:10px;
+
+    right:10px;
+
+    padding:8px;
+
+}
+
+.music-title{
+
+    font-size:11px;
+
+}
+
+.music-player button{
+
+    height:30px;
+
+    font-size:11px;
+
+}
+
+.volume-box{
+
+    font-size:10px;
+
+}
 
 }

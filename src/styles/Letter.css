@@ -1,106 +1,308 @@
-.letter-page{
+/* ======================================================
+   LETTER PAGE
+====================================================== */
 
-width:100%;
-height:100vh;
+.letter-page {
 
-background:#050505;
+    width: 100%;
+    min-height: 100vh;
 
-display:flex;
-justify-content:center;
-align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-padding:40px;
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(circle at top,
+            rgba(255, 20, 147, .12),
+            transparent 45%),
+        #050505;
+
+    overflow-x: hidden;
 }
 
-.paper{
+/* ======================================================
+   PAPER
+====================================================== */
 
-width:900px;
+.paper {
 
-height:82vh;
+    width: min(900px, 100%);
+    max-width: 900px;
 
-overflow-y:auto;
+    height: 82vh;
 
-background:#fff9f3;
+    overflow-y: auto;
 
-border-radius:18px;
+    background: #fff9f3;
 
-padding:50px;
+    border-radius: 22px;
 
-box-shadow:
-0 0 40px rgba(255,105,180,.25);
+    padding: 50px;
 
-animation:paperOpen 1s ease;
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.45),
+        0 0 30px rgba(255,105,180,.18);
+
+    animation: paperOpen .9s ease;
+
+    scrollbar-width: thin;
+    scrollbar-color: #ff4d88 transparent;
 }
+
+/* Chrome Scrollbar */
+
+.paper::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.paper::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+.paper::-webkit-scrollbar-thumb{
+
+    background:#ff4d88;
+
+    border-radius:20px;
+
+}
+
+/* ======================================================
+   TITLE
+====================================================== */
 
 .paper h1{
 
-text-align:center;
+    text-align:center;
 
-margin-bottom:35px;
+    margin-bottom:35px;
 
-font-size:48px;
+    font-size:48px;
 
-font-family:"Great Vibes",cursive;
+    font-family:"Great Vibes",cursive;
 
-color:#ff4d88;
+    color:#ff4d88;
+
+    text-shadow:
+        0 0 10px rgba(255,105,180,.4);
+
 }
+
+/* ======================================================
+   LETTER TEXT
+====================================================== */
 
 .paper pre{
 
-white-space:pre-wrap;
+    white-space:pre-wrap;
 
-font-size:20px;
+    font-size:20px;
 
-line-height:2;
+    line-height:2;
 
-font-family:"Poppins",sans-serif;
+    font-family:"Poppins",sans-serif;
 
-color:#444;
+    color:#444;
+
 }
+
+/* ======================================================
+   BUTTON
+====================================================== */
 
 .paper button{
 
-display:block;
+    display:block;
 
-margin:50px auto 0;
+    margin:50px auto 0;
 
-padding:18px 40px;
+    padding:18px 42px;
 
-border:none;
+    border:none;
 
-border-radius:12px;
+    border-radius:14px;
 
-background:linear-gradient(135deg,#ff2d75,#ff77b5);
+    background:linear-gradient(
+        135deg,
+        #ff2d75,
+        #ff77b5
+    );
 
-color:white;
+    color:white;
 
-font-size:18px;
+    font-size:18px;
 
-cursor:pointer;
+    font-weight:600;
 
-transition:.4s;
+    cursor:pointer;
+
+    transition:.35s;
+
 }
 
 .paper button:hover{
 
-transform:translateY(-4px);
+    transform:translateY(-4px);
 
-box-shadow:0 0 25px hotpink;
+    box-shadow:
+        0 0 25px hotpink;
+
 }
+
+/* ======================================================
+   OPEN ANIMATION
+====================================================== */
 
 @keyframes paperOpen{
 
-from{
+    from{
 
-opacity:0;
+        opacity:0;
 
-transform:scale(.8);
+        transform:
+            scale(.92)
+            translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            scale(1)
+            translateY(0);
+
+    }
+
 }
 
-to{
+/* ======================================================
+   TABLETS
+====================================================== */
 
-opacity:1;
+@media (max-width: 992px){
 
-transform:scale(1);
+.paper{
+
+    width:95%;
+
+    height:85vh;
+
+    padding:40px;
+
 }
+
+.paper h1{
+
+    font-size:40px;
+
+}
+
+.paper pre{
+
+    font-size:18px;
+
+    line-height:1.9;
+
+}
+
+}
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media (max-width:768px){
+
+.letter-page{
+
+    padding:18px;
+
+    align-items:center;
+
+}
+
+.paper{
+
+    width:100%;
+
+    height:88vh;
+
+    padding:28px 22px;
+
+    border-radius:18px;
+
+}
+
+.paper h1{
+
+    font-size:34px;
+
+    margin-bottom:25px;
+
+}
+
+.paper pre{
+
+    font-size:16px;
+
+    line-height:1.9;
+
+}
+
+.paper button{
+
+    width:100%;
+
+    padding:16px;
+
+    font-size:17px;
+
+    margin-top:35px;
+
+}
+
+}
+
+/* ======================================================
+   SMALL PHONES
+====================================================== */
+
+@media (max-width:480px){
+
+.paper{
+
+    height:90vh;
+
+    padding:22px 18px;
+
+}
+
+.paper h1{
+
+    font-size:30px;
+
+}
+
+.paper pre{
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+
+.paper button{
+
+    font-size:16px;
+
+}
+
 }

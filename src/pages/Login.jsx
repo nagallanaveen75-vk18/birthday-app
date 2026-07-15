@@ -1,25 +1,20 @@
 import "../styles/Login.css";
-
 import { useState } from "react";
 
-
-
-
-function Login({ onLoginSuccess })  {
+function Login({ onLoginSuccess }) {
   const [name, setName] = useState("");
   const [dob, setDob] = useState("");
-  const [loggedIn, setLoggedIn] = useState(false);
 
-const handleLogin = () => {
-  if (
-    name.trim().toLowerCase() === "ammu" &&
-    dob === "2004-07-17"
-  ) {
-    onLoginSuccess();
-  } else {
-    alert("Oops! This surprise is only for Ammu ❤️");
-  }
-};
+  const handleLogin = () => {
+    if (
+      name.trim().toLowerCase() === "ammu" &&
+      dob === "2004-07-17"
+    ) {
+      onLoginSuccess();
+    } else {
+      alert("Oops! This surprise is only for Ammu ❤️");
+    }
+  };
 
   return (
     <div className="login-page">
@@ -32,9 +27,7 @@ const handleLogin = () => {
           A Little Surprise Awaits...
         </h1>
 
-        <p>
-          Every beautiful story has a beginning...
-        </p>
+        <p>Every beautiful story has a beginning...</p>
 
         <input
           type="text"

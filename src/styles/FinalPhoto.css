@@ -165,10 +165,10 @@
 
     border: 1px solid rgba(255, 255, 255, .08);
 
-    text-shadow:
+    /* text-shadow:
         0 2px 10px rgba(0, 0, 0, .95),
         0 0 20px hotpink,
-        0 0 40px deeppink;
+        0 0 40px deeppink; */
 
     animation: quoteGlow 2.5s ease-in-out infinite alternate;
 
@@ -451,51 +451,168 @@
     border-radius: 30px;
 
 }
-
 /* =====================================================
-   MOBILE
+   MOBILE (Android & iPhone)
 ===================================================== */
 
-@media (max-width:768px) {
+@media screen and (max-width:768px){
 
-    .hero-photo {
+.photo-page{
 
-        width: 90vw;
+    width:100vw;
+    min-height:100vh;
 
-        height: 70vh;
+    padding:0;
 
-    }
+    overflow:hidden;
 
-    .quote-box {
+}
 
-        font-size: 28px;
+/* Background */
 
-    }
+.photo-bg{
 
-    .birthday-card {
+    filter:blur(1.5px) brightness(.45);
 
-        width: 95vw;
+    transform:scale(1.08);
 
-        padding: 35px;
+}
 
-    }
+/* Photo */
 
-    .birthday-card h1 {
+.photo-content{
 
-        font-size: 38px;
+    width:100%;
+    height:100vh;
 
-    }
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-    .birthday-card h2 {
+    padding:15px;
 
-        font-size: 26px;
+}
 
-    }
+.hero-photo{
 
-    .birthday-card p {
+    width:95vw;
 
-        font-size: 18px;
+    height:72vh;
 
-    }
+    max-width:none;
+    max-height:none;
+
+    object-fit:contain;
+
+    object-position:center;
+
+    border-radius:22px;
+
+    box-shadow:
+        0 0 25px rgba(255,20,147,.35);
+
+}
+
+/* Quotes */
+
+.quote-box{
+
+    width:90%;
+
+    max-width:none;
+
+    padding:18px;
+
+    font-size:24px;
+
+    line-height:1.55;
+
+    border-radius:18px;
+
+    backdrop-filter:blur(.2px);
+
+}
+
+/* Birthday Letter */
+
+.birthday-card{
+
+    width:94vw;
+
+    max-height:88vh;
+
+    padding:28px 22px;
+
+    border-radius:24px;
+
+}
+
+/* Headings */
+
+.birthday-card h1{
+
+    font-size:34px;
+
+    margin-bottom:16px;
+
+}
+
+.birthday-card h2{
+
+    font-size:24px;
+
+    margin-bottom:28px;
+
+}
+
+.birthday-card p{
+
+    font-size:17px;
+
+    line-height:1.9;
+
+}
+
+.birthday-card h3{
+
+    font-size:22px;
+
+    margin-top:32px;
+
+}
+
+/* Button */
+
+.continue-btn{
+
+    width:100%;
+
+    margin-top:35px;
+
+    padding:16px;
+
+    font-size:18px;
+
+    border-radius:50px;
+
+}
+
+/* Video */
+
+.birthday-video{
+
+    width:95vw;
+
+    border-radius:18px;
+
+}
+
+/* iPhone Safe Area */
+
+body{
+
+    padding-bottom:env(safe-area-inset-bottom);
+
+}
 
 }

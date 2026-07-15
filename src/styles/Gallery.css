@@ -1,119 +1,122 @@
-/* ===========================
+/* ======================================================
    GALLERY PAGE
-=========================== */
+====================================================== */
 
 .gallery-page{
     min-height:100vh;
-
+    width:100%;
     display:flex;
     flex-direction:column;
-
     justify-content:flex-start;
+    align-items:center;
+    padding:35px 20px 50px;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+/* ======================================================
+   TITLE
+====================================================== */
+
+.gallery-title{
+    font-size:48px;
+    font-weight:700;
+    color:#ffffff;
+    text-align:center;
+    margin-bottom:12px;
+    text-shadow:0 0 15px rgba(255,105,180,.6);
+}
+
+.gallery-subtitle{
+    font-size:18px;
+    color:#ffc4d6;
+    text-align:center;
+    margin-bottom:35px;
+    max-width:700px;
+}
+
+/* ======================================================
+   MEMORY CARD
+====================================================== */
+
+.memory-card{
+
+    width:min(900px,95vw);
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:28px;
+
+    padding:25px;
+
+    box-shadow:
+        0 0 35px rgba(255,20,147,.22);
+
+    overflow:hidden;
+
+    text-align:center;
+}
+
+/* ======================================================
+   IMAGE CONTAINER
+====================================================== */
+
+.image-container{
+
+    position:relative;
+
+    width:100%;
+
+    height:500px;
+
+    display:flex;
+
+    justify-content:center;
 
     align-items:center;
 
-    padding:30px 20px;
+    overflow:hidden;
 
-    overflow-y:auto;
-}
-/* ===========================
-   TITLE
-=========================== */
+    border-radius:22px;
 
-.gallery-title {
-  font-size: 48px;
-  margin-bottom: 10px;
-  color: #fff;
-  text-align: center;
+    background:#111;
 }
 
-.gallery-subtitle {
-  font-size: 18px;
-  color: #ffc4d6;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-/* ===========================
-   MEMORY CARD
-=========================== */
-.memory-card{
-
-    max-height:90vh;
-
-    overflow-y:auto;
-}
-
-.memory-card {
-  width: min(850px,92vw);
-  max-width: 95%;
-
-  background: rgba(255, 255, 255, 0.08);
-
-  backdrop-filter: blur(15px);
-
-  border-radius: 25px;
-
-  padding: 20px;
-
-  box-shadow: 0 0 30px rgba(255, 20, 147, 0.25);
-
-  text-align: center;
-}
-
-/* ===========================
-   IMAGE CONTAINER
-=========================== */
-
-.image-container {
-  position: relative;
-
-  width: 100%;
-
-  height: 430px;      /* Reduced from 520px */
-
-  background: #111;
-
-  border-radius: 20px;
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-  overflow: hidden;
-}
-
-/* ===========================
+/* ======================================================
    IMAGE
-=========================== */
+====================================================== */
 
-.image-container img {
-  max-width: 95%;
+.image-container img{
 
-  max-height: 95%;
+    width:100%;
 
-  width: auto;
+    height:100%;
 
-  height: auto;
+    object-fit:contain;
 
-  object-fit: contain;
+    object-position:center;
 
-  border-radius: 18px;
+    border-radius:18px;
 
-  transition: 0.5s;
+    transition:.45s ease;
 
-  box-shadow: 0 0 25px rgba(255, 105, 180, 0.35);
+    box-shadow:
+        0 0 25px rgba(255,20,147,.35);
 }
 
-.image-container img:hover {
-  transform: scale(1.02);
+.image-container img:hover{
+
+    transform:scale(1.03);
+
 }
 
-/* ===========================
+/* ======================================================
    ARROWS
-=========================== */
+====================================================== */
 
 .arrow{
 
@@ -123,19 +126,13 @@
 
     transform:translateY(-50%);
 
-    width:56px;
+    width:58px;
 
-    height:56px;
+    height:58px;
 
     border:none;
 
     border-radius:50%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
 
     background:rgba(0,0,0,.55);
 
@@ -145,21 +142,25 @@
 
     cursor:pointer;
 
-    z-index:20;
+    display:flex;
 
-    transition:
-        background .3s,
-        box-shadow .3s,
-        scale .3s;
+    justify-content:center;
+
+    align-items:center;
+
+    transition:.3s;
+
+    z-index:20;
 }
 
 .arrow:hover{
 
     background:#ff4d88;
 
-    box-shadow:0 0 18px hotpink;
+    transform:translateY(-50%) scale(1.08);
 
-    scale:1.08;
+    box-shadow:
+        0 0 18px hotpink;
 }
 
 .arrow:disabled{
@@ -172,139 +173,285 @@
 .left{
 
     left:18px;
+
 }
 
 .right{
 
     right:18px;
+
 }
 
-.arrow::before{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-}
-/* ===========================
-   TITLE
-=========================== */
+/* ======================================================
+   TEXT
+====================================================== */
 
 .memory-title{
 
-    margin-top:18px;
+    margin-top:25px;
 
-    margin-bottom:8px;
-
-    font-size:28px;
+    font-size:30px;
 
     color:white;
+
+    font-weight:700;
 }
 
 .memory-description{
 
-    margin-top:10px;
+    margin-top:14px;
 
-    font-size:17px;
+    font-size:18px;
 
-    line-height:1.5;
+    line-height:1.8;
 
-    color:#f6c9d7;
+    color:#f8d7e2;
 
-    max-width:700px;
+    max-width:760px;
 
     margin-left:auto;
 
     margin-right:auto;
 }
+
 .counter{
 
-    color:#ffffff !important;
+    margin-top:15px;
+
+    font-size:17px;
+
+    color:white;
 }
-/* ===========================
+
+/* ======================================================
    DOTS
-=========================== */
+====================================================== */
 
-.dots {
-  margin-top: 20px;
+.dots{
 
-  display: flex;
+    margin-top:22px;
 
-  justify-content: center;
+    display:flex;
 
-  gap: 10px;
+    justify-content:center;
 
-  flex-wrap: wrap;
+    flex-wrap:wrap;
+
+    gap:12px;
 }
 
-.dot {
-  width: 10px;
+.dot{
 
-  height: 10px;
+    width:11px;
 
-  border-radius: 50%;
+    height:11px;
 
-  background: gray;
+    border-radius:50%;
 
-  transition: .3s;
+    background:#777;
+
+    transition:.35s;
 }
 
-.dot.active {
-  background: hotpink;
+.dot.active{
 
-  transform: scale(1.5);
+    background:#ff4d88;
+
+    transform:scale(1.5);
+
+    box-shadow:
+        0 0 10px hotpink;
 }
 
-/* ===========================
-   MOBILE
-=========================== */
+/* ======================================================
+   TABLET
+====================================================== */
 
-@media (max-width:768px){
-
-.memory-card{
-
-padding:20px;
-
-}
+@media (max-width:992px){
 
 .gallery-title{
 
-font-size:34px;
-
-}
-
-.gallery-subtitle{
-
-font-size:16px;
+font-size:42px;
 
 }
 
 .image-container{
 
-height:350px;
+height:430px;
 
 }
 
 .memory-title{
 
-font-size:24px;
+font-size:27px;
 
 }
 
 .memory-description{
 
-font-size:16px;
+font-size:17px;
+
+}
+
+}
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media (max-width:768px){
+
+.gallery-page{
+
+padding:20px 12px 40px;
+
+}
+
+.gallery-title{
+
+font-size:30px;
+
+margin-bottom:8px;
+
+}
+
+.gallery-subtitle{
+
+font-size:15px;
+
+margin-bottom:22px;
+
+padding:0 10px;
+
+}
+
+.memory-card{
+
+width:100%;
+
+padding:16px;
+
+border-radius:22px;
+
+}
+
+.image-container{
+
+height:60vh;
+
+min-height:340px;
+
+max-height:500px;
+
+border-radius:18px;
+
+}
+
+.image-container img{
+
+width:100%;
+
+height:100%;
+
+object-fit:contain;
+
+}
+
+.memory-title{
+
+font-size:22px;
+
+margin-top:18px;
+
+}
+
+.memory-description{
+
+font-size:15px;
+
+line-height:1.7;
 
 }
 
 .arrow{
 
-width:45px;
+width:46px;
 
-height:45px;
+height:46px;
 
 font-size:22px;
+
+}
+
+.left{
+
+left:10px;
+
+}
+
+.right{
+
+right:10px;
+
+}
+
+.dot{
+
+width:10px;
+
+height:10px;
+
+}
+
+}
+
+/* ======================================================
+   SMALL PHONES
+====================================================== */
+
+@media (max-width:480px){
+
+.gallery-title{
+
+font-size:26px;
+
+}
+
+.gallery-subtitle{
+
+font-size:14px;
+
+}
+
+.image-container{
+
+height:55vh;
+
+min-height:300px;
+
+}
+
+.memory-title{
+
+font-size:20px;
+
+}
+
+.memory-description{
+
+font-size:14px;
+
+line-height:1.6;
+
+}
+
+.arrow{
+
+width:42px;
+
+height:42px;
+
+font-size:20px;
 
 }
 
