@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+.login-page{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:#050505;
+
+position:relative;
+
+overflow:hidden;
+
+font-family:'Poppins',sans-serif;
+}
+
+.background-glow{
+
+position:absolute;
+
+width:900px;
+
+height:900px;
+
+border-radius:50%;
+
+background:
+radial-gradient(circle,
+rgba(255,20,147,.25),
+transparent 65%);
+
+filter:blur(90px);
+
+animation:pulse 6s ease-in-out infinite;
+}
+
+@keyframes pulse{
+
+0%{transform:scale(.8);}
+50%{transform:scale(1);}
+100%{transform:scale(.8);}
+}
+
+.login-card{
+
+width:470px;
+
+padding:45px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(25px);
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.15);
+
+box-shadow:
+0 0 60px rgba(255,20,147,.25);
+
+z-index:5;
+
+text-align:center;
+}
+
+.login-card h3{
+
+font-family:'Great Vibes',cursive;
+
+font-size:38px;
+
+color:#ff5d9e;
+
+margin-bottom:10px;
+}
+
+.login-card h1{
+
+font-size:34px;
+
+color:white;
+
+margin-bottom:15px;
+}
+
+.login-card p{
+
+color:#bbbbbb;
+
+margin-bottom:30px;
+
+line-height:26px;
+}
+
+.login-card input{
+
+width:100%;
+
+padding:16px;
+
+margin:12px 0;
+
+border:none;
+
+outline:none;
+
+border-radius:12px;
+
+background:rgba(255,255,255,.08);
+
+color:white;
+
+font-size:16px;
+
+transition:.4s;
+}
+
+.login-card input:focus{
+
+box-shadow:0 0 18px hotpink;
+}
+
+.login-card button{
+
+width:100%;
+
+margin-top:20px;
+
+padding:16px;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+font-size:17px;
+
+font-weight:600;
+
+background:linear-gradient(135deg,#ff2d75,#ff7eb3);
+
+color:white;
+
+transition:.4s;
+}
+
+.login-card button:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 0 25px hotpink;
+}
+.star{
+
+position:absolute;
+
+width:2px;
+
+height:2px;
+
+background:white;
+
+border-radius:50%;
+
+animation:twinkle 3s infinite ease-in-out;
+
+opacity:.8;
+}
+
+@keyframes twinkle{
+
+0%{
+
+opacity:.2;
+
+transform:scale(.5);
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(1.5);
+}
+
+100%{
+
+opacity:.2;
+
+transform:scale(.5);
+}
+}
+.journey-btn{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:17px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:linear-gradient(
+        135deg,
+        #ff2d75,
+        #ff5ea8,
+        #ff8bc2
+    );
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.4s ease;
+
+    position:relative;
+
+    overflow:hidden;
+
+    letter-spacing:1px;
+}
+
+.journey-btn:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 0 20px #ff4d88,
+        0 0 45px rgba(255,20,147,.5);
+
+}
+.journey-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:70%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.55),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    transition:.7s;
+}
+
+.journey-btn:hover::before{
+
+    left:130%;
+}
+.main-heading{
+
+    font-size:48px;
+
+    color:white;
+
+    margin-bottom:18px;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+    text-shadow:
+        0 0 15px rgba(255,255,255,.15);
+}
+/* Floating Hearts */
+
+.heart{
+
+    position:absolute;
+
+    bottom:-60px;
+
+    color:#ff5ca8;
+
+    opacity:.25;
+
+    animation:floatHeart linear infinite;
+
+    pointer-events:none;
+
+    filter:drop-shadow(0 0 10px hotpink);
+}
+
+@keyframes floatHeart{
+
+    0%{
+
+        transform:
+        translateY(0)
+        scale(.7)
+        rotate(0deg);
+
+        opacity:0;
+    }
+
+    20%{
+
+        opacity:.25;
+    }
+
+    80%{
+
+        opacity:.4;
+    }
+
+    100%{
+
+        transform:
+        translateY(-120vh)
+        scale(1.2)
+        rotate(360deg);
+
+        opacity:0;
+    }
+
+}

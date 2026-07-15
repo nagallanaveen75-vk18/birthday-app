@@ -1,0 +1,311 @@
+/* ===========================
+   GALLERY PAGE
+=========================== */
+
+.gallery-page{
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    padding:30px 20px;
+
+    overflow-y:auto;
+}
+/* ===========================
+   TITLE
+=========================== */
+
+.gallery-title {
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+.gallery-subtitle {
+  font-size: 18px;
+  color: #ffc4d6;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* ===========================
+   MEMORY CARD
+=========================== */
+.memory-card{
+
+    max-height:90vh;
+
+    overflow-y:auto;
+}
+
+.memory-card {
+  width: min(850px,92vw);
+  max-width: 95%;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(15px);
+
+  border-radius: 25px;
+
+  padding: 20px;
+
+  box-shadow: 0 0 30px rgba(255, 20, 147, 0.25);
+
+  text-align: center;
+}
+
+/* ===========================
+   IMAGE CONTAINER
+=========================== */
+
+.image-container {
+  position: relative;
+
+  width: 100%;
+
+  height: 430px;      /* Reduced from 520px */
+
+  background: #111;
+
+  border-radius: 20px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  overflow: hidden;
+}
+
+/* ===========================
+   IMAGE
+=========================== */
+
+.image-container img {
+  max-width: 95%;
+
+  max-height: 95%;
+
+  width: auto;
+
+  height: auto;
+
+  object-fit: contain;
+
+  border-radius: 18px;
+
+  transition: 0.5s;
+
+  box-shadow: 0 0 25px rgba(255, 105, 180, 0.35);
+}
+
+.image-container img:hover {
+  transform: scale(1.02);
+}
+
+/* ===========================
+   ARROWS
+=========================== */
+
+.arrow{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:56px;
+
+    height:56px;
+
+    border:none;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.55);
+
+    color:white;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    z-index:20;
+
+    transition:
+        background .3s,
+        box-shadow .3s,
+        scale .3s;
+}
+
+.arrow:hover{
+
+    background:#ff4d88;
+
+    box-shadow:0 0 18px hotpink;
+
+    scale:1.08;
+}
+
+.arrow:disabled{
+
+    opacity:.35;
+
+    cursor:not-allowed;
+}
+
+.left{
+
+    left:18px;
+}
+
+.right{
+
+    right:18px;
+}
+
+.arrow::before{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+/* ===========================
+   TITLE
+=========================== */
+
+.memory-title{
+
+    margin-top:18px;
+
+    margin-bottom:8px;
+
+    font-size:28px;
+
+    color:white;
+}
+
+.memory-description{
+
+    margin-top:10px;
+
+    font-size:17px;
+
+    line-height:1.5;
+
+    color:#f6c9d7;
+
+    max-width:700px;
+
+    margin-left:auto;
+
+    margin-right:auto;
+}
+.counter{
+
+    color:#ffffff !important;
+}
+/* ===========================
+   DOTS
+=========================== */
+
+.dots {
+  margin-top: 20px;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+.dot {
+  width: 10px;
+
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: gray;
+
+  transition: .3s;
+}
+
+.dot.active {
+  background: hotpink;
+
+  transform: scale(1.5);
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+.memory-card{
+
+padding:20px;
+
+}
+
+.gallery-title{
+
+font-size:34px;
+
+}
+
+.gallery-subtitle{
+
+font-size:16px;
+
+}
+
+.image-container{
+
+height:350px;
+
+}
+
+.memory-title{
+
+font-size:24px;
+
+}
+
+.memory-description{
+
+font-size:16px;
+
+}
+
+.arrow{
+
+width:45px;
+
+height:45px;
+
+font-size:22px;
+
+}
+
+}

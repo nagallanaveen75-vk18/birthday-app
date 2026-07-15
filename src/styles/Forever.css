@@ -1,0 +1,503 @@
+/* ===========================
+   BACKGROUND
+=========================== */
+.forever-page{
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    padding:60px 20px;
+
+}
+
+.forever-page::-webkit-scrollbar{
+
+    display:none;
+
+}
+.typewriter-wrapper{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-top:40px;
+
+}
+/* ===========================
+   STARS
+=========================== */
+
+.stars{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+}
+
+.star{
+
+    position:absolute;
+
+    width:3px;
+
+    height:3px;
+
+    background:white;
+
+    border-radius:50%;
+
+    box-shadow:0 0 12px white;
+
+    animation:twinkle infinite;
+
+}
+
+@keyframes twinkle{
+
+0%{
+
+opacity:.2;
+
+transform:scale(.5);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(1.6);
+
+}
+
+100%{
+
+opacity:.2;
+
+transform:scale(.5);
+
+}
+
+}
+
+/* ===========================
+   HEARTS
+=========================== */
+
+.heart-row{
+
+    display:flex;
+
+    gap:40px;
+
+    margin-bottom:30px;
+
+}
+
+.big-heart{
+
+    font-size:90px;
+
+    filter:drop-shadow(0 0 25px hotpink);
+
+}
+
+/* ===========================
+   TITLES
+=========================== */
+
+.forever-page h1{
+
+    font-size:70px;
+
+    color:#ff4d88;
+
+    margin-bottom:20px;
+
+    text-shadow:0 0 25px hotpink;
+
+}
+
+.forever-page h2{
+
+    font-size:38px;
+
+    color:#ffd6e7;
+
+    margin-bottom:40px;
+
+}
+
+.infinity{
+
+    font-size:80px;
+
+    margin:30px 0;
+
+}
+
+.forever-page h3{
+
+    font-size:42px;
+
+    color:#ffe066;
+
+    margin-top:20px;
+
+}
+
+.forever-page p{
+
+    max-width:700px;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    margin-top:30px;
+
+    color:#f8f8f8;
+
+}
+
+/* ===========================
+   GLOW
+=========================== */
+
+.forever-page::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+
+    height:700px;
+
+    background:radial-gradient(
+        hotpink,
+        transparent 70%
+    );
+
+    opacity:.08;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+.forever-page h1{
+
+font-size:42px;
+
+}
+
+.forever-page h2{
+
+font-size:26px;
+
+}
+
+.big-heart{
+
+font-size:60px;
+
+}
+
+.infinity{
+
+font-size:55px;
+
+}
+
+.forever-page p{
+
+font-size:18px;
+
+}
+
+}
+
+/*==========================
+MOON
+==========================*/
+
+.moon{
+
+    position:absolute;
+
+    top:80px;
+
+    right:120px;
+
+    width:160px;
+
+    height:160px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    box-shadow:
+
+    0 0 40px #fff,
+
+    0 0 80px #fff,
+
+    0 0 140px rgba(255,255,255,.5);
+
+    opacity:.9;
+
+}
+
+/*==========================
+SHOOTING STARS
+==========================*/
+
+.shooting-star{
+
+    position:absolute;
+
+    left:-250px;
+
+    width:180px;
+
+    height:2px;
+
+    background:linear-gradient(
+
+        to right,
+
+        white,
+
+        transparent
+
+    );
+
+    animation:shoot 10s linear infinite;
+
+}
+
+@keyframes shoot{
+
+0%{
+
+transform:
+
+translateX(0)
+
+translateY(0)
+
+rotate(25deg);
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+
+translateX(1800px)
+
+translateY(400px)
+
+rotate(25deg);
+
+opacity:0;
+
+}
+
+}
+
+/*==========================
+SPARKLES
+==========================*/
+
+.sparkle{
+
+    position:absolute;
+
+    font-size:16px;
+
+    animation:sparkle 4s infinite;
+
+}
+
+@keyframes sparkle{
+
+0%{
+
+opacity:0;
+
+transform:scale(.5);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(1.3);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:scale(.5);
+
+}
+
+}
+/*==========================
+PETALS
+==========================*/
+
+.petal{
+
+    position:absolute;
+
+    top:-80px;
+
+    font-size:22px;
+
+    animation:petalFall linear infinite;
+
+}
+
+@keyframes petalFall{
+
+0%{
+
+transform:
+
+translateY(-100px)
+
+rotate(0deg);
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+
+translateY(120vh)
+
+rotate(720deg);
+
+opacity:0;
+
+}
+
+}
+/*======================
+GRAND FIREWORKS
+======================*/
+
+.grand-fireworks{
+
+position:absolute;
+
+inset:0;
+
+pointer-events:none;
+
+}
+
+.fire{
+
+position:absolute;
+
+width:8px;
+
+height:8px;
+
+border-radius:50%;
+
+animation:explode 3s infinite;
+
+}
+
+@keyframes explode{
+
+0%{
+
+transform:scale(0);
+
+opacity:1;
+
+}
+
+70%{
+
+transform:scale(4);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:scale(8);
+
+opacity:0;
+
+}
+
+}
+
+.signature{
+
+margin-top:60px;
+
+font-size:18px;
+
+letter-spacing:3px;
+
+opacity:.7;
+
+font-style:italic;
+
+}

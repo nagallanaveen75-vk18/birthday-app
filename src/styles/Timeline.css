@@ -1,0 +1,204 @@
+.timeline-page{
+
+    min-height:100vh;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    scroll-behavior:smooth;
+
+    padding:50px 20px;
+
+    position:relative;
+
+    color:white;
+}
+.timeline-page h1{
+
+    color:#ff4d88;
+
+    margin-bottom:70px;
+
+    text-shadow:0 0 20px hotpink;
+
+}
+
+.timeline{
+
+    width:90%;
+
+    max-width:900px;
+
+    margin:auto;
+
+    position:relative;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    width:4px;
+
+    height:100%;
+
+    background:#ff4d88;
+
+    transform:translateX(-50%);
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    width:50%;
+
+    padding:30px;
+
+    box-sizing:border-box;
+
+}
+
+.timeline-item:nth-child(odd){
+
+    left:0;
+
+    text-align:right;
+
+}
+
+.timeline-item:nth-child(even){
+
+    left:50%;
+
+    text-align:left;
+
+}
+
+.circle{
+
+    position:absolute;
+
+    width:22px;
+
+    height:22px;
+
+    background:#ff4d88;
+
+    border-radius:50%;
+
+    top:45px;
+
+    right:-11px;
+
+    box-shadow:0 0 20px hotpink;
+
+}
+
+.timeline-item:nth-child(even) .circle{
+
+    left:-11px;
+
+}
+
+.card{
+
+    background:rgba(255,255,255,.08);
+
+    padding:25px;
+
+    border-radius:18px;
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:0 0 20px rgba(255,105,180,.25);
+
+}
+
+.card h2{
+
+    color:#ff8db8;
+
+}
+
+.card h3{
+
+    margin:12px 0;
+
+}
+
+.card p{
+
+    line-height:1.8;
+
+}
+
+.timeline-page button{
+
+    margin-top:80px;
+
+}
+.continue-btn{
+
+    display:block;
+
+    margin:60px auto;
+
+    padding:16px 40px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:#ff4d88;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.timeline-btn-container{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:70px 0;
+
+}
+
+.continue-btn{
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:#ff4d88;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+}
