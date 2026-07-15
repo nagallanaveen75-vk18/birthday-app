@@ -33,51 +33,53 @@ function MusicPlayer({ song }) {
 
         const audio = audioRef.current;
 
+        audio.pause();
+
         audio.src = playlist[currentSong];
+
+        audio.preload = "auto";
 
         audio.volume = volume;
 
         audio.load();
 
         if (playing) {
-
-            audio.play().catch(() => {});
-
+            audio.play().catch(() => { });
         }
 
-    }, [currentSong, playlist]);
+    }, [currentSong, volume, playing, playlist]);
 
     // volume
 
     useEffect(() => {
 
-        if(audioRef.current){
+        if (audioRef.current) {
 
-            audioRef.current.volume=volume;
+            audioRef.current.volume = volume;
 
         }
 
-    },[volume]);
+    }, [volume]);
 
     // next song
 
     const nextSong = () => {
 
-    setCurrentSong((prev) => {
+        setCurrentSong((prev) => {
 
-        return (prev + 1) % playlist.length;
+            return (prev + 1) % playlist.length;
 
-    });
+        });
 
-};
+    };
 
     // play pause
 
-    const toggleMusic=()=>{
+    const toggleMusic = () => {
 
-        if(!audioRef.current) return;
+        if (!audioRef.current) return;
 
-        if(playing){
+        if (playing) {
 
             audioRef.current.pause();
 
@@ -85,7 +87,7 @@ function MusicPlayer({ song }) {
 
         }
 
-        else{
+        else {
 
             audioRef.current.play();
 
@@ -95,23 +97,37 @@ function MusicPlayer({ song }) {
 
     };
 
-    return(
+    useEffect(() => {
+
+        playlist.forEach((song) => {
+
+            const audio = new Audio();
+
+            audio.src = song;
+
+            audio.preload = "auto";
+
+        });
+
+    }, []);
+    return (
 
         <div className="music-player">
 
             <audio
-    ref={audioRef}
-    loop={playlist.length === 1}
-    onEnded={() => {
+                ref={audioRef}
+                loop={playlist.length === 1}
+                preload="auto"
+                onEnded={() => {
 
-        if (playlist.length > 1) {
+                    if (playlist.length > 1) {
 
-            nextSong();
+                        nextSong();
 
-        }
+                    }
 
-    }}
-/>
+                }}
+            />
 
             <div className="music-title">
 
@@ -145,7 +161,7 @@ function MusicPlayer({ song }) {
 
                     value={volume}
 
-                    onChange={(e)=>
+                    onChange={(e) =>
 
                         setVolume(Number(e.target.value))
 

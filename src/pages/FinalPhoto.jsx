@@ -85,6 +85,15 @@ function FinalPhoto({ onContinue }) {
 
   }, [showFireworks]);
 
+useEffect(() => {
+  const nextIndex = currentQuote + 1;
+
+  if (nextIndex < photos.length) {
+    const img = new Image();
+    img.src = photos[nextIndex];
+  }
+}, [currentQuote]);
+
   return (
 
     <div className="photo-page">

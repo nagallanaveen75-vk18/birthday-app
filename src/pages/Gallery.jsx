@@ -168,35 +168,22 @@ function Gallery({ onContinue }) {
             </button>
 
             <motion.img
-
               key={memory.image}
-
               src={memory.image}
-
               alt={memory.title}
-
+              loading="eager"
+              decoding="async"
               initial={{
-
                 opacity: 0,
-
-                scale: .9
-
+                scale: 0.95
               }}
-
               animate={{
-
                 opacity: 1,
-
                 scale: 1
-
               }}
-
               transition={{
-
-                duration: .6
-
+                duration: 0.5
               }}
-
             />
 
             <button
