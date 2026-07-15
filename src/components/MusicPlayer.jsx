@@ -105,27 +105,6 @@ function MusicPlayer({ song }) {
           }
         }}
       />
-
-      <div className="music-title">
-        🎵 {names[currentSong] || "Now Playing"}
-      </div>
-
-      <button onClick={toggleMusic}>
-        {playing ? "⏸ Stop Music" : "▶ Resume Music"}
-      </button>
-
-      <div className="volume-box">
-        🔊
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.01"
-          value={volume}
-          onChange={(e) => setVolume(Number(e.target.value))}
-        />
-      </div>
-
     </div>
   );
 }
