@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import Typewriter from "../components/Typewriter";
+import Typewriter from "../components/TypeWriter";
 import Fireworks from "../components/FireworksEffect";
 import "../styles/Forever.css";
 

@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useState, useRef, useEffect, useMemo } from "react";
 import Fireworks from "../components/FireworksEffect";
-import Typewriter from "../components/Typewriter";
+
+import Typewriter from "../components/TypeWriter";
 import "../styles/FinalSurprise.css";
 
 function FinalSurprise({ onContinue }) {
